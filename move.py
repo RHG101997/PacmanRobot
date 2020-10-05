@@ -31,6 +31,7 @@ class Move:
         self.calibration = False
         self.timeToRotate = 0 #This variale use for turning with angles
         self.stop()
+        self.config = config
         time.sleep(4)
 
 
