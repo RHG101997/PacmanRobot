@@ -1,0 +1,36 @@
+Raspberry Pi 4 
+Height	3.37 in (85.6 mm)
+Width	2.22 in (56.5 mm)
+Depth	0.43307 in (11 mm)
+
+L298N
+Dimensions: 43x43x27mm
+https://www.amazon.com/PChero-Controller-Module-Stepper-Arduino/dp/B07GTCWN9Z/ref=sr_1_5?dchild=1&keywords=L298N&qid=1601914282&s=electronics&sr=1-5
+
+
+2 Tire
+Diameter of the tire: 67mm/2.6"
+Width of the tire: 27mm/1.06"
+
+
+motor: 
+64.2  5mm
+22.5 5mm
+22.5mm(without the shaft)
+
+https://www.amazon.com/dp/B07L881GXZ/ref=sspa_dk_detail_1?psc=1&pd_rd_i=B07L881GXZ&pd_rd_w=u8JXi&pf_rd_p=7d37a48b-2b1a-4373-8c1a-bdcc5da66be9&pd_rd_wg=J5csc&pf_rd_r=6YASSBEMCC4BNXJ4YAC0&pd_rd_r=62267a1c-c66c-4aa0-9c4d-5c7eefa974f8&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzVk1DUVgyVlpISTVBJmVuY3J5cHRlZElkPUEwOTYwNjk3MkVUTllYVVJTV0VWSCZlbmNyeXB0ZWRBZElkPUEwMTc1NDExMjJMRVkzRDZRNEY0WiZ3aWRnZXROYW1lPXNwX2RldGFpbCZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=
+
+
+Bateries(we need 2)
+ 5v and 2amps bat. for Raspberry
+ and a 3 - 6 for motors
+
+
+Camera (it has case a case)
+25mm x 23mm x 9mm
+https://www.amazon.com/gp/product/B08F527JVH/ref=ppx_yo_dt_b_asin_title_o04_s00?ie=UTF8&psc=1
+
+
+Sensor IR
+3.2CM * 1.4CM
+https://www.amazon.com/gp/product/B07W97H2WS/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1
