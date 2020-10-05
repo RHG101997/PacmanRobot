@@ -1,4 +1,5 @@
 from imutils.video import VideoStream
+import configparser
 import numpy as np
 import cv2
 import imutils
@@ -6,7 +7,7 @@ import time
 import math
 
 class Vision:
-    def __init__(self, move, colorLower, colorUpper):
+    def __init__(self,config,move,colorLower, colorUpper):
         # Camera stream
         self.vs = VideoStream(usePiCamera=1).start()
         # Movement
@@ -14,16 +15,17 @@ class Vision:
         # target HSV Color
         self.colorLower = colorLower
         self.colorUpper = colorUpper
-        #GUI 
-        self.gui = False
+        #GUI(default is False)
+        self.gui = config.getboolean("gui") if "gui" in config else False
         # Current Target
         self.target = None
-        # Angle
-        self.camera_horizontal_view = 54
-        # Frame Ratio
-        self.frameWidth = 600
-        self.frameLength = 480
+        # Angle(Default is 54(raspberry cam))
+        self.camera_horizontal_view = int(config["camera_horizontal_view"]) if "camera_horizontal_view" in config else 54
+        # Frame Ratio(Default is 600x480)
+        self.frameWidth =int(config["frameWidth"]) if "frameWidth" in config else 600
+        self.frameLength = int(config["frameLength"]) if "frameLength" in config else 480
         self.frameCenter = (self.frameWidth/2,self.frameLength/2)
+        self.config = config
 
 
     def analyseFrame(self):
