@@ -1,29 +1,29 @@
-import RPi.GPIO as gpio
-import configparser
 import time
+import RPi.GPIO as gpio
+
 
 class Move:
     
-    def __init__(self,config):
+    def __init__(self, config):
         # Pins
         self.en1 = int(config["en1"]) if "en1" in config else 25
         self.en2 = int(config["en2"]) if "en2" in config else 27
         self.rightW1 =int(config["rightW1"]) if "rightW1" in config else  17
         self.rightW2 = int(config["rightW2"]) if "rightW2" in config else  22
         self.leftW1 = int(config["leftW1"]) if "leftW1" in config else  23
-        self.leftW2 =int(config["leftW2"]) if "leftW2" in config else 24
-        self.frontSensor =int(config["frontSensor"]) if "frontSensor" in config else 21
-        self.speed =int(config["speed"]) if "speed" in config else 50
+        self.leftW2 = int(config["leftW2"]) if "leftW2" in config else 24
+        self.frontSensor = int(config["frontSensor"]) if "frontSensor" in config else 21
+        self.speed = int(config["speed"]) if "speed" in config else 50
         # SetUp
         gpio.setmode(gpio.BCM)
         gpio.setwarnings(False)
-        gpio.setup(self.en1,gpio.OUT)
-        gpio.setup(self.en2,gpio.OUT)
+        gpio.setup(self.en1, gpio.OUT)
+        gpio.setup(self.en2, gpio.OUT)
         gpio.setup(self.rightW1, gpio.OUT) #right wheels
         gpio.setup(self.rightW2, gpio.OUT)
         gpio.setup(self.leftW1, gpio.OUT) #left wheels
         gpio.setup(self.leftW2, gpio.OUT)
-        gpio.setup(self.frontSensor,gpio.IN)
+        gpio.setup(self.frontSensor, gpio.IN)
         self.p1 = gpio.PWM(self.en1,1000)
         self.p2 = gpio.PWM(self.en2,1000)
         self.p1.start(self.speed)

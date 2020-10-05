@@ -1,10 +1,7 @@
 from imutils.video import VideoStream
-import configparser
-import numpy as np
 import cv2
 import imutils
-import time
-import math
+
 
 class Vision:
     def __init__(self,config,move,colorLower, colorUpper):
