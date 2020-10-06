@@ -17,7 +17,7 @@ camera_horizontal_view = 54
 
 
 # Will stream video to cv2
-vs = VideoStream(0).start()
+vs = VideoStream(1).start()
 # vs = VideoStream(src=0).start()
 # move = Move()
 

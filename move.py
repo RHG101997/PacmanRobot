@@ -24,8 +24,8 @@ class Move:
         gpio.setup(self.leftW1, gpio.OUT) #left wheels
         gpio.setup(self.leftW2, gpio.OUT)
         gpio.setup(self.frontSensor, gpio.IN)
-        self.p1 = gpio.PWM(self.en1,1000)
-        self.p2 = gpio.PWM(self.en2,1000)
+        self.p1 = gpio.PWM(self.en1, 1000)
+        self.p2 = gpio.PWM(self.en2, 1000)
         self.p1.start(self.speed)
         self.p2.start(self.speed)
         self.calibration = False
@@ -44,37 +44,30 @@ class Move:
             gpio.output(self.rightW1, False)
             gpio.output(self.rightW2, True)
             gpio.output(self.leftW1, True)
-            gpio.output(self.leftW2, False)
-    
+            gpio.output(self.leftW2, False) 
     def reverse(self):
         gpio.output(self.rightW1, True)
         gpio.output(self.rightW2, False)
         gpio.output(self.leftW1, False)
         gpio.output(self.leftW2, True)
-    
     def stop(self):
         gpio.output(self.rightW1, False)
         gpio.output(self.rightW2, False)
         gpio.output(self.leftW1, False)
         gpio.output(self.leftW2, False)
-    
     def turnLeft(self):
         self.stop()
         gpio.output(self.rightW1, True)
         gpio.output(self.rightW2, False)
         gpio.output(self.leftW1, True)
         gpio.output(self.leftW2, False)
-
-    
     def turnRight(self):
         self.stop()
         gpio.output(self.rightW1, False)
         gpio.output(self.rightW2, True)
         gpio.output(self.leftW1, False)
         gpio.output(self.leftW2, True)
-
-
-    def turnLeftByTime(self,sec):
+    def turnLeftByTime(self, sec):
         self.stop()
         gpio.output(self.rightW1, True)
         gpio.output(self.rightW2, False)
@@ -82,8 +75,7 @@ class Move:
         gpio.output(self.leftW2, False)
         time.sleep(sec)
         self.stop()
-    
-    def turnRightByTime(self,sec):
+    def turnRightByTime(self, sec):
         self.stop()
         gpio.output(self.rightW1, False)
         gpio.output(self.rightW2, True)
@@ -91,23 +83,18 @@ class Move:
         gpio.output(self.leftW2, True)
         time.sleep(sec)
         self.stop()
-
     def turnRightByAngle(self, angle):
         if(not self.calibration):
             print("Calibartion Required")
         else:
             turning_time = (angle*self.timeToRotate)/360
-            self.turnRightByTime(turning_time)
-    
+            self.turnRightByTime(turning_time) 
     def turnLeftByAngle(self, angle):
         if(not self.calibration):
             print("Calibartion Required")
         else:
             turning_time = (angle*self.timeToRotate)/360
             self.turnLeftByTime(turning_time)
-
-
-    
     def changeSpeed(self, speed):
         self.speed = speed
         self.p1.ChangeDutyCycle(speed)
