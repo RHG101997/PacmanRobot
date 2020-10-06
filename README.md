@@ -12,7 +12,7 @@ This project is a robot that will follow the rules of a competition in IEEE Sout
 
 ## How it Works
 
-1. The initial script is start.py
+1. The initial script is **start.py**
     * This script will import the values from the config.ini
     * Creat all the objects that the robot will need to run like: Vision and Move classes
 2. The classes will pull the information for their respective function from the config file as well
@@ -29,7 +29,7 @@ This project is a robot that will follow the rules of a competition in IEEE Sout
 
 ### Vision
 
-![Object detection](/imgs/"object detection.JPG")
+![Object detection](/imgs/obj_detect.jpg)
 
 * The image above show a ball been detected(Yellow circle)
 * After the position on camera is aquired, we calculate the distance from center(Redline)
