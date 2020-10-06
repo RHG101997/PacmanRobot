@@ -23,7 +23,7 @@ colorLower , colorUpper = importHSV(config,"Target")
 # Setting up movement for Robot
 move = Move(config["Move"])
 # Calibrate(for angle turning angles)
-move.calibrateRobot()
+
 
 # Setting up target and following
 vs = Vision(config['Vision'],move,colorLower,colorUpper)

@@ -14,6 +14,7 @@ class Move:
         self.leftW2 = int(config["leftW2"]) if "leftW2" in config else 24
         self.frontSensor = int(config["frontSensor"]) if "frontSensor" in config else 21
         self.speed = int(config["speed"]) if "speed" in config else 50
+        self.config = config
         # SetUp
         gpio.setmode(gpio.BCM)
         gpio.setwarnings(False)
@@ -28,10 +29,14 @@ class Move:
         self.p2 = gpio.PWM(self.en2, 1000)
         self.p1.start(self.speed)
         self.p2.start(self.speed)
-        self.calibration = False
-        self.timeToRotate = 0 #This variale use for turning with angles
+        # Calibration settings
+        if(config.getboolean("calibrate")):
+            self.calibrateRobot()
+        else:
+            self.calibration = True
+            self.timeToRotate = int(config["default_calibration"])
+        # Initialization for motors 
         self.stop()
-        self.config = config
         time.sleep(4)
 
 
