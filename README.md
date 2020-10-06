@@ -36,7 +36,8 @@ This project is a robot that will follow the rules of a competition in IEEE Sout
 * The size of that line will indicate
     1. How much degrees robot needs to turn
     2. (Left or Right) Which direction the object is on
-* The field of view is important because the calculation requires:
+* The field of view is important because the calculation requires:  
+
 **angle_turn** = *((field_of_view/2)*(lenght_red_line_in_pixels))/(width_of_screen_in_pixels/2)*
 
 ## References
