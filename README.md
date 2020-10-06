@@ -29,7 +29,7 @@ This project is a robot that will follow the rules of a competition in IEEE Sout
 
 ### Vision
 
-![Object detection](/imgs/obj_detect.jpg)
+![Object detection](/imgs/obj_detect.jpg =250x)
 
 * The image above show a ball been detected(Yellow circle)
 * After the position on camera is acquired, we calculate the distance from center(Redline)
