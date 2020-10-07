@@ -74,16 +74,16 @@ class Vision:
                     cv2.circle(frame, (self.target.x, self.target.y), self.target.radius,(0, 255, 255), 2)
                     cv2.line(frame, (self.target.x, self.frameCenter[1]),self.frameCenter,(0, 0, 255),2)
 
-                if(offset_dist < -100 and radius < 60):
+                if(offset_dist < -100 and self.target.radius < 60):
                     # turn right
                     self.move.turnRightByAngle(angle)
-                elif(offset_dist > 100 and  radius < 60):
+                elif(offset_dist > 100 and  self.target.radius < 60):
                     # turn left
                     self.move.turnLeftByAngle(angle) 
-                elif(radius < 60):
+                elif(self.target.radius < 60):
                     #forward
                     self.move.forward()
-                elif(radius > 80):
+                elif(self.target.radius > 80):
                     # Reverse
                     self.move.reverse() 
                 else:
