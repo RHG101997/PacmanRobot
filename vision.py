@@ -56,8 +56,7 @@ class Vision:
             return frame
     
     ''' Function searches for specifc target around the robot '''
-    def search(self,target = self.target):
-        self.target = target #assign target to vision class
+    def search(self):
         # turn while target is not on sight
         while(not target.onScreen):
             frame = self.analyseFrame()
@@ -65,7 +64,7 @@ class Vision:
         self.followTarget()
 
     
-    def followTarget(self, target = self.target):
+    def followTarget(self):
         while True:
             frame  = self.analyseFrame()
             if self.target.onScreen:
