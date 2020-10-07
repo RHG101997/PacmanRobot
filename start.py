@@ -1,7 +1,7 @@
 import configparser
 from move import Move
 from vision import Vision
-
+from target import Target
 
 def importHSV(config,name):
     # the values for specific target
@@ -19,6 +19,8 @@ config.read("config.ini")
 
 # importing information of target
 colorLower , colorUpper = importHSV(config,"Target")
+# creating target
+target = Target(colorLower,colorUpper)
 
 # Setting up movement for Robot
 move = Move(config["Move"])
@@ -26,8 +28,8 @@ move = Move(config["Move"])
 
 
 # Setting up target and following
-vs = Vision(config['Vision'],move,colorLower,colorUpper)
-vs.followTarget()
+vs = Vision(config['Vision'],move,target)
+vs.search()
 
 
 
