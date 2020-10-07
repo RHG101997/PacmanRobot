@@ -36,7 +36,9 @@ while True:
 
     # mask
     mask = cv2.inRange(hsv, l_b, u_b)
-
+    # decrease the smaller amount of bolbs
+    mask = cv2.erode(mask, None, iterations=5)
+    mask = cv2.dilate(mask, None, iterations=5) 
     img = cv2.bitwise_and(frame, frame, mask=mask)
 
     # cv2.imshow("frame", frame)

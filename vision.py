@@ -57,11 +57,10 @@ class Vision:
     
     ''' Function searches for specifc target around the robot '''
     def search(self):
-        # turn while target is not on sight
+        # turn while target is not on sight  
         while(not self.target.onScreen):
+            self.move.turnRightByAngle(10)
             frame = self.analyseFrame()
-            self.move.turnRightByAngle(20)
-        self.followTarget()
 
     
     def followTarget(self):
