@@ -34,7 +34,7 @@ class Move:
             self.calibrateRobot()
         else:
             self.calibration = True
-            self.timeToRotate = int(config["default_calibration"])
+            self.timeToRotate = float(config["default_calibration"])
         # Initialization for motors 
         self.stop()
         time.sleep(4)
