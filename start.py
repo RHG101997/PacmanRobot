@@ -29,7 +29,7 @@ move = Move(config["Move"])
 
 # Setting up target and following
 vs = Vision(config['Vision'],move,target)
-vs.search()
+vs.followTarget()
 
 
 
