@@ -3,7 +3,7 @@ import socket
 import os
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-host = "10.0.0.142"
+host = "10.0.0.130"
 port = 1235
 
 s.connect((host,port))

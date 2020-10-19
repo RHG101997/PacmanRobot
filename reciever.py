@@ -32,7 +32,7 @@ hostname = socket.gethostname()
 host = socket.gethostbyname(hostname)
 port  = 1235
 move = Move(config["Move"])
-
+print("Host: " + str(hostname) + "Port:" + port)
 
 
 s.bind((host, port))
