@@ -32,7 +32,7 @@ config = configparser.ConfigParser()
 config.read("config.ini")
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 hostname = socket.gethostname()
-host = "10.0.0.1:W30"
+host = "10.0.0.130"
 port  = 1235
 move = Move(config["Move"])
 print("Host: " + str(hostname) + "Port:" + str(port))
