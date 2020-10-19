@@ -18,7 +18,7 @@ def action(msg,move):
     elif (msg == "d"):
         print("Right")
         move.turnRight()
-    elif (msg == "stop")
+    elif (msg == "stop"):
         print("Stop")
         move.stop()
     else:
