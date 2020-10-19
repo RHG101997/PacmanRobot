@@ -2,6 +2,7 @@ import socket
 import threading
 import os
 from move import Move
+import configparser
 
 
 def action(msg,move):
@@ -23,6 +24,9 @@ def action(msg,move):
      
         
 
+# Importing config
+config = configparser.ConfigParser()
+config.read("config.ini")
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 hostname = socket.gethostname()
 host = socket.gethostbyname(hostname)
