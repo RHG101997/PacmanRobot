@@ -18,9 +18,12 @@ def action(msg,move):
     elif (msg == "d"):
         print("Right")
         move.turnRight()
-    else:
-        print("Stopped")
+    elif (msg == "stop")
+        print("Stop")
         move.stop()
+    else:
+        print("Open")
+        # move.stop()
      
         
 
@@ -29,7 +32,7 @@ config = configparser.ConfigParser()
 config.read("config.ini")
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 hostname = socket.gethostname()
-host = socket.gethostbyname(hostname)
+host = "10.0.0.1:W30"
 port  = 1235
 move = Move(config["Move"])
 print("Host: " + str(hostname) + "Port:" + str(port))
