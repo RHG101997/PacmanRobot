@@ -21,6 +21,8 @@ def action(msg,move):
     elif (msg == "stop"):
         print("Stop")
         move.stop()
+    else: 
+        print("Open")
 
      
         

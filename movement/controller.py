@@ -10,10 +10,8 @@ s.connect((host,port))
 print("Connected")
 while True:  # making a loop
     try:  
-
         if(keyboard.is_pressed('q')):  # if key 'q' is pressed 
             s.send(bytes("q","utf-8"))
-            break
         elif (keyboard.is_pressed('w')):
             s.send(bytes("w","utf-8"))
         elif (keyboard.is_pressed('s')):
