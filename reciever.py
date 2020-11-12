@@ -5,6 +5,7 @@ from move import Move
 import configparser
 
 
+
 def action(msg,move):
     if(msg == "w"):
         print("Foward")

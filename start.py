@@ -27,7 +27,7 @@ move = Move(config["Move"])
 # Calibrate(for angle turning angles)
 
 
-# Setting up target and following
+# Setting up target and following 
 vs = Vision(config['Vision'],move,target)
 vs.followTarget()
 
