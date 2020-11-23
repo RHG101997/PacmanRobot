@@ -109,7 +109,7 @@ class Move:
         if gpio.input(self.frontSensor):
             return False
         else:
-            return True
+            return False # change so try forward
 
     def calibrateRobot(self):
         print("Begin Calibration Procedure\nPlace Object in front of sensor")
