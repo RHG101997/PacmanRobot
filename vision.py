@@ -65,7 +65,8 @@ class Vision:
     
     # follow
     def followTarget(self):
-        while True:
+        centered = False
+        while( not centered):
             frame  = self.analyseFrame()
             if self.target.onScreen:
                 offset_dist =self.target.x-self.frameCenter[0]
@@ -82,6 +83,7 @@ class Vision:
                 else:
                     # Stop
                     self.move.stop()
+                    centered == True
             else:
                 self.move.stop() # if not on screen  
             if self.gui:
@@ -91,6 +93,7 @@ class Vision:
                 # if the 'q' key is pressed, stop the loop
                 if key == ord("q"):
 	                break
+        self.move.moveDistance(9)
 
 
     def showGUI(self):
