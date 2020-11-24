@@ -149,7 +149,7 @@ class Move:
         self.stop()
 
     def calSpeed(self, curr ,final):
-        return int((curr*100)/final)
+        return (100 - ((curr*100)/final))
 
 
 
