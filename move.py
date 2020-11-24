@@ -152,7 +152,7 @@ class Move:
         diff = (100 - ((curr*100)/final))
         if(diff > 50):
             return 50
-        elif (diff < 10):
+        elif (diff < 20):
             return 5
         else:
             return diff
