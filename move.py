@@ -127,6 +127,7 @@ class Move:
     def turnByRight(self,steps):
         self.encLeft.reset()
         self.encRight.reset()
+        time.sleep(0.05)
         self.turnRight()
         while(self.encRight.read() < steps and self.encLeft.read() > steps):
             time.sleep(0.05)
