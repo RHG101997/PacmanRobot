@@ -81,7 +81,7 @@ class Vision:
                 else:
                     # Stop
                     self.move.stop()
-                    break
+                    return True
             else:
                 self.move.stop() # if not on screen  
             if self.gui:
@@ -91,8 +91,7 @@ class Vision:
                 # if the 'q' key is pressed, stop the loop
                 if key == ord("q"):
 	                break
-        self.move.moveDistance(15)
-
+        return False
 
     def showGUI(self):
         self.gui = True

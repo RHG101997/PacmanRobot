@@ -29,7 +29,8 @@ move = Move(config["Move"])
 
 # Setting up target and following 
 vs = Vision(config['Vision'],move,target)
-vs.centerTarget()
+centered = vs.centerTarget()
+print(centered)
 
 
 
