@@ -13,8 +13,8 @@ class Move:
         self.leftW1 = int(config["leftW1"]) if "leftW1" in config else  23
         self.leftW2 = int(config["leftW2"]) if "leftW2" in config else 24
         # Encoder added
-        self.encRight = Encoder(20,21)
-        self.encLeft = Encoder(5,6)
+        self.encLeft = Encoder(20,21)
+        self.encRight = Encoder(5,6)
 
         self.frontSensor = int(config["frontSensor"]) if "frontSensor" in config else 21
         self.speed = int(config["speed"]) if "speed" in config else 50

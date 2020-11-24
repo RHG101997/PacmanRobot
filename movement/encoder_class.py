@@ -1,7 +1,7 @@
 import Encoder
 
 
-enc = Encoder.Encoder(21,20)
+enc = Encoder.Encoder(20,21)
 enc2 = Encoder.Encoder(5,6)
 while True:
     print("left: ",  end = "")
