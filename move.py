@@ -157,7 +157,7 @@ class Move:
             return diff
     
     def calAngleToSteps(self, angle):
-        return int((angle*1500)/90) # based on 90 - 1400 steps
+        return int((angle*1600)/90) # based on 90 - 1400 steps
 
 
 
