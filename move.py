@@ -151,7 +151,7 @@ class Move:
     def calSpeed(self, curr ,final):
         diff = (100 - ((curr*100)/final))
         if(diff > 50):
-            return 
+            return 50
         elif (diff < 10):
             return 10
         else:
