@@ -64,13 +64,13 @@ class Move:
         gpio.output(self.rightW2, False)
         gpio.output(self.leftW1, False)
         gpio.output(self.leftW2, False)
-    def turnRight(self):
+    def turnLeft(self):
         self.stop()
         gpio.output(self.rightW1, True)
         gpio.output(self.rightW2, False)
         gpio.output(self.leftW1, True)
         gpio.output(self.leftW2, False)
-    def turnLeft(self):
+    def turnRight(self):
         self.stop()
         gpio.output(self.rightW1, False)
         gpio.output(self.rightW2, True)
