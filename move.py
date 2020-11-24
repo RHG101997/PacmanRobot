@@ -121,6 +121,7 @@ class Move:
         self.encRight.reset()
         self.forward()
         while(self.encRight.read() < steps and self.encLeft.read() < steps):
+            print("Moving")
             pass
         self.stop()
 
