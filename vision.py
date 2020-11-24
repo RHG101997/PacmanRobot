@@ -76,10 +76,10 @@ class Vision:
                     cv2.line(frame, (self.target.x, self.frameCenter[1]),self.frameCenter,(0, 0, 255),2)
                 if(offset_dist < -50):
                     # turn right
-                    self.move.turnByRight(100)
+                    self.move.turnByRight(50)
                 elif(offset_dist > 50):
                     # turn left
-                    self.move.turnByLeft(100)
+                    self.move.turnByLeft(50)
                 else:
                     # Stop
                     self.move.stop()
