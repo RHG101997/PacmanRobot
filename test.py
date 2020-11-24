@@ -10,7 +10,11 @@ move = Move(config["Move"])
 
 # move 65 millimeters
 print("Forward")
-move.moveBy(2552)
+# move.moveBy(2552)
+move.forward()
+time.sleep(2)
+move.stop()
+
 
 
 
