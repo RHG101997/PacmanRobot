@@ -65,7 +65,7 @@ class Encoder(object):
 
     def inToSteps(self,inch):
         # 2552 - > 65 mm or 8.0395240961 in
-        return int((inch*2552)/8.0395)
+        return int((inch*2300)/8.0395)
 
     
 
