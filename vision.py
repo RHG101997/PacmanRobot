@@ -73,24 +73,17 @@ class Vision:
                 if self.gui: 
                     cv2.circle(frame, (self.target.x, self.target.y), self.target.radius,(0, 255, 255), 2)
                     cv2.line(frame, (self.target.x, self.frameCenter[1]),self.frameCenter,(0, 0, 255),2)
-
-                if(offset_dist < -100 and self.target.radius < 60):
+                if(offset_dist < -50):
                     # turn right
                     self.move.turnRightByAngle(angle)
-                elif(offset_dist > 100 and  self.target.radius < 60):
+                elif(offset_dist > 50):
                     # turn left
                     self.move.turnLeftByAngle(angle) 
-                elif(self.target.radius < 60):
-                    #forward
-                    self.move.forward()
-                elif(self.target.radius > 80):
-                    # Reverse
-                    self.move.reverse() 
                 else:
                     # Stop
                     self.move.stop()
             else:
-                self.search() # search if object not found     
+                self.move.stop() # if not on screen  
             if self.gui:
                 #Show the the object in video frame 
                 cv2.imshow("Frame", frame)
