@@ -7,13 +7,10 @@ config = configparser.ConfigParser()
 config.read("config.ini")
 move = Move(config["Move"])
 
+
+# move 65 millimeters
 print("Forward")
-move.forward()
-time.sleep(3)
-move.stop()
-print("Right")
-move.turnRightByTime(2)
-print("Left")
-move.turnLeftByTime(2)
+move.moveBy(2552)
+
 
 

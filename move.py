@@ -1,6 +1,6 @@
 import time
 import RPi.GPIO as gpio
-
+from encoder import Encoder
 
 class Move:
     
@@ -12,6 +12,9 @@ class Move:
         self.rightW2 = int(config["rightW2"]) if "rightW2" in config else  22
         self.leftW1 = int(config["leftW1"]) if "leftW1" in config else  23
         self.leftW2 = int(config["leftW2"]) if "leftW2" in config else 24
+        # Encoder added
+        self.enc1 = Encoder(20,21)
+
         self.frontSensor = int(config["frontSensor"]) if "frontSensor" in config else 21
         self.speed = int(config["speed"]) if "speed" in config else 50
         self.config = config
@@ -110,6 +113,13 @@ class Move:
             return False
         else:
             return False # change so try forward
+
+    # Added encoders to Motors
+    def moveBy(self,steps):
+        while(steps >= self.enc1.read()):
+            self.forward()
+        self.stop()
+
 
     def calibrateRobot(self):
         print("Begin Calibration Procedure\nPlace Object in front of sensor")
