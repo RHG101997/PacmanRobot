@@ -136,11 +136,11 @@ class Move:
             pass
         # determine which motor is ahead
         if(misR > misL):
-            self.p2.ChangeDutyCycle(speed*2)
+            self.p2.ChangeDutyCycle(speed*1.2)
             self.p1.ChangeDutyCycle(speed)
         elif(misL > misR):
             self.p2.ChangeDutyCycle(speed)
-            self.p1.ChangeDutyCycle(speed*2)
+            self.p1.ChangeDutyCycle(speed*1.2)
         else:
             self.p1.ChangeDutyCycle(speed)
             self.p2.ChangeDutyCycle(speed)
