@@ -15,6 +15,8 @@ move.forward()
 time.sleep(2)
 move.stop()
 
+move.turnLeftByAngle(90)
+
 
 
 
