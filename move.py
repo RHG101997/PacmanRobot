@@ -153,7 +153,7 @@ class Move:
         if(diff > 50):
             return 50
         elif (diff < 10):
-            return 10
+            return 5
         else:
             return diff
 
