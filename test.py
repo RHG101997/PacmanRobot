@@ -9,6 +9,7 @@ move = Move(config["Move"])
 
 # 1400  arounf 90 degree
 move.turnByRight(1400)
+move.moveBy()
 
 
 
