@@ -83,8 +83,8 @@ class Vision:
                 else:
                     # Stop
                     self.move.stop()
-                    notCentered == False
-                    print("Centered")
+                    break
+                    print("Centered - > Moving")
             else:
                 self.move.stop() # if not on screen  
             if self.gui:
