@@ -117,7 +117,6 @@ class Move:
     # Added encoders to Motors
     def moveBy(self,steps):
         while(self.enc1.read() < steps):
-            print(self.enc1.read())
             self.forward()
         self.stop()
 
