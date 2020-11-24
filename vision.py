@@ -65,8 +65,8 @@ class Vision:
     
     # follow
     def followTarget(self):
-        centered = False
-        while( not centered):
+        notCentered = True
+        while(notCentered):
             frame  = self.analyseFrame()
             if self.target.onScreen:
                 offset_dist =self.target.x-self.frameCenter[0]
@@ -83,7 +83,8 @@ class Vision:
                 else:
                     # Stop
                     self.move.stop()
-                    centered == True
+                    notCentered == False
+                    print("Centered")
             else:
                 self.move.stop() # if not on screen  
             if self.gui:
