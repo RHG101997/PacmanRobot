@@ -13,7 +13,8 @@ class Move:
         self.leftW1 = int(config["leftW1"]) if "leftW1" in config else  23
         self.leftW2 = int(config["leftW2"]) if "leftW2" in config else 24
         # Encoder added
-        self.enc1 = Encoder(20,21)
+        self.encRight = Encoder(20,21)
+        self.encLeft = Encoder(5,6)
 
         self.frontSensor = int(config["frontSensor"]) if "frontSensor" in config else 21
         self.speed = int(config["speed"]) if "speed" in config else 50
@@ -116,8 +117,11 @@ class Move:
 
     # Added encoders to Motors
     def moveBy(self,steps):
-        while(self.enc1.read() < steps):
-            self.forward()
+        self.encLeft.reset()
+        self.encRight.reset()
+        self.forward()
+        while(self.encRight.read() < steps and self.encLeft.read() < steps):
+            pass
         self.stop()
 
 
