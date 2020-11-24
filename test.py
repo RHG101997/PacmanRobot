@@ -24,6 +24,6 @@ move = Move(config["Move"])
 
 
 move.moveBy(3165) # feet
-move.turnRightByAngle(1495)
+move.turnByRight(1495)
 move.moveBy(4885) # feet
 
