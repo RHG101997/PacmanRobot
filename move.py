@@ -120,7 +120,7 @@ class Move:
         self.forward()
         while(self.encRight.read() < steps and self.encLeft.read() < steps):
             self.changeSpeed(self.calSpeed(self.speed ,steps))
-            print("Right: " + self.encRight.read() + " Left " + self.encLeft.read() )
+            print("Right: " + str(self.encRight.read()) + " Left " + str(self.encLeft.read()) )
             time.sleep(0.01)
         self.stop()
     
