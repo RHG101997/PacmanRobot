@@ -119,7 +119,7 @@ class Move:
         self.encRight.reset()
         self.forward()
         while(self.encRight.read() < steps and self.encLeft.read() < steps):
-            self.changeSpeed(self.calSpeed(self.speed ,steps))
+            # self.changeSpeed(self.calSpeed(self.speed ,steps))
             time.sleep(0.01)
         self.stop()
     
