@@ -120,6 +120,7 @@ class Move:
         self.forward()
         while(self.encRight.read() < steps and self.encLeft.read() < steps):
             self.balanceMotor(self.encRight.read(),self.encLeft.read(), steps)
+            time.sleep(0.001)
         print("Right: " + str(self.encRight.read()) + " Left " + str(self.encLeft.read()) )
         self.stop()
 
