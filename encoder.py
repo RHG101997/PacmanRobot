@@ -67,5 +67,6 @@ class Encoder(object):
         # 2552 - > 65 mm or 8.0395240961 in
         return int((inch*2300)/8.0395)
 
+
     
 

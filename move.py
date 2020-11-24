@@ -119,7 +119,7 @@ class Move:
         self.encRight.reset()
         self.forward()
         while(self.encRight.read() < steps and self.encLeft.read() < steps):
-new func            self.balanceMotor(self.encRight.read(),self.encLeft.read(), steps)
+            self.balanceMotor(self.encRight.read(),self.encLeft.read(), steps)
             time.sleep(0.01)
         print("Right: " + str(self.encRight.read()) + " Left " + str(self.encLeft.read()) )
         self.stop()
