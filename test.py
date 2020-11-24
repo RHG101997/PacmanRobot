@@ -9,15 +9,18 @@ move = Move(config["Move"])
 
 # 1400  arounf 90 degree
 
-print("right")
-move.turnByRight(1400)
-print("done")
-print("right")
-move.turnByLeft(1400)
+# print("right")
+# move.turnByRight(1400)
+# print("done")
+# print("right")
+# move.turnByLeft(1400)
 
 
-print("forward")
-move.moveBy(1000)
+# print("forward")
+# move.moveBy(1000)
 
 
-print("done")
+# print("done")
+
+
+move.moveDistance(6)

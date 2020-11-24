@@ -124,6 +124,10 @@ class Move:
             time.sleep(0.05)
         self.stop()
     
+    # move specific distance-
+    def moveDistance(self, inch):
+        self.moveBy(self.encRight.inToSteps(inch))
+
     def turnByRight(self,steps):
         self.encLeft.reset()
         self.encRight.reset()
@@ -140,6 +144,7 @@ class Move:
         while(self.encRight.read() < steps  and self.encLeft.read() > (-1*steps)):
             time.sleep(0.05)
         self.stop()
+
 
 
 

@@ -62,3 +62,10 @@ class Encoder(object):
     def reset(self):
         self.pos = 0
         self.state = 0
+
+    def inToSteps(self,inch):
+        # 2552 - > 65 mm or 8.0395240961 in
+        return int((inch*2552)/8.0395)
+
+    
+
