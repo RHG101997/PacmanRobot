@@ -121,6 +121,7 @@ class Move:
         self.encRight.reset()
         self.forward()
         while(self.encRight.read() < steps and self.encLeft.read() < steps):
+            self.changeSpeed(self.calSpeed(self.speed ,steps))
             time.sleep(0.01)
         self.stop()
     
@@ -133,7 +134,8 @@ class Move:
         self.encRight.reset()
         self.turnRight()
         while(self.encRight.read() > (-1*steps) and self.encLeft.read() < steps):
-            time.sleep(0.05)
+            self.changeSpeed(self.calSpeed(self.speed ,steps))
+            time.sleep(0.01)
         self.stop()
 
 
@@ -142,9 +144,12 @@ class Move:
         self.encRight.reset()
         self.turnLeft()
         while(self.encRight.read() < steps  and self.encLeft.read() > (-1*steps)):
-            time.sleep(0.05)
+            self.changeSpeed(self.calSpeed(self.speed ,steps))
+            time.sleep(0.01)
         self.stop()
 
+    def calSpeed(self, curr ,final):
+        return int((curr*2300)/final)
 
 
 
