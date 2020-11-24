@@ -23,7 +23,7 @@ move = Move(config["Move"])
 # print("done")
 
 
-move.moveDistance(12) # feet
-move.turnRightByAngle(100)
+move.moveBy(3165) # feet
+move.turnRightByAngle(90)
 move.moveDistance(39) # feet
 
