@@ -8,7 +8,7 @@ config.read("config.ini")
 move = Move(config["Move"])
 
 
-move.moveBy(2552)
+move.turnByRight(1400)
 
 
 

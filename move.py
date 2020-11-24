@@ -123,7 +123,14 @@ class Move:
         while(self.encRight.read() < steps and self.encLeft.read() < steps):
             time.sleep(0.05)
         self.stop()
-
+    
+    def turnByRight(self,steps):
+        self.encLeft.reset()
+        self.encRight.reset()
+        self.turnRight()
+        while(self.encRight.read() > (-1*steps) and self.encLeft.read() < steps):
+            time.sleep(0.05)
+        self.stop()
 
 
 
