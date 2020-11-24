@@ -8,11 +8,9 @@ config.read("config.ini")
 move = Move(config["Move"])
 
 # 1400  arounf 90 degree
-# move.turnByRight(1400)
-move.turnLeftByTime(1)
-move.forward()
-time.sleep(1)
-move.stop()
+move.moveBy(1000)
+move.turnByRight(1400)
+
 
 
 
