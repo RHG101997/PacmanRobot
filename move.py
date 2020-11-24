@@ -116,12 +116,10 @@ class Move:
 
     # Added encoders to Motors
     def moveBy(self,steps):
-        self.forward()
-        while(True):
-            if(self.enc1.read() > steps):
-                print("Got it")
-                self.stop()
-                break
+        while(self.enc1.read() < steps):
+            print(self.enc1.read())
+            self.forward()
+        self.stop()
 
 
     def calibrateRobot(self):
