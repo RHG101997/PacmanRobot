@@ -64,19 +64,17 @@ class Vision:
 
     
     # follow
-    def followTarget(self):
-        notCentered = True
-        while(notCentered):
+    def centerTarget(self):
+        while(True):
             frame  = self.analyseFrame()
             if self.target.onScreen:
                 offset_dist =self.target.x-self.frameCenter[0]
-                angle = (abs(offset_dist)*(self.camera_horizontal_view/2))/(self.frameCenter[0])
                 if self.gui: 
                     cv2.circle(frame, (self.target.x, self.target.y), self.target.radius,(0, 255, 255), 2)
                     cv2.line(frame, (self.target.x, self.frameCenter[1]),self.frameCenter,(0, 0, 255),2)
                 if(offset_dist < -50):
                     # turn right
-                    self.move.turnByRight(50)
+                    self.move.turnByRight(50) # small steps to center object
                 elif(offset_dist > 50):
                     # turn left
                     self.move.turnByLeft(50)
@@ -84,7 +82,6 @@ class Vision:
                     # Stop
                     self.move.stop()
                     break
-                    print("Centered - > Moving")
             else:
                 self.move.stop() # if not on screen  
             if self.gui:
@@ -94,7 +91,7 @@ class Vision:
                 # if the 'q' key is pressed, stop the loop
                 if key == ord("q"):
 	                break
-        self.move.moveDistance(9)
+        self.move.moveDistance(15)
 
 
     def showGUI(self):
