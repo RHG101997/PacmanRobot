@@ -24,3 +24,4 @@ move = Move(config["Move"])
 
 
 move.moveDistance(6)
+move.turnRightByAngle(90)

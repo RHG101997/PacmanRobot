@@ -92,18 +92,16 @@ class Move:
         gpio.output(self.leftW2, True)
         time.sleep(sec)
         self.stop()
+
+    # changed to use encoder steps
     def turnRightByAngle(self, angle):
-        if(not self.calibration):
-            print("Calibartion Required")
-        else:
-            turning_time = (angle*self.timeToRotate)/360
-            self.turnRightByTime(turning_time) 
+        self.turnByRight(self.calAngleToSteps(angle))
+
+    # chnaged to use encoder steps
     def turnLeftByAngle(self, angle):
-        if(not self.calibration):
-            print("Calibartion Required")
-        else:
-            turning_time = (angle*self.timeToRotate)/360
-            self.turnLeftByTime(turning_time)
+        self.turnByLeft(self.calAngleToSteps(angle))
+
+
     def changeSpeed(self, speed):
         self.speed = speed
         self.p1.ChangeDutyCycle(speed)
@@ -148,6 +146,7 @@ class Move:
             time.sleep(0.01)
         self.stop()
 
+    # Slow down when close to goal
     def calSpeed(self, curr ,final):
         diff = (100 - ((curr*100)/final))
         if(diff > 50):
@@ -156,6 +155,9 @@ class Move:
             return 5
         else:
             return diff
+    
+    def calAngleToSteps(self, angle):
+        return int((angle*1400)/90) # based on 90 - 1400 steps
 
 
 
