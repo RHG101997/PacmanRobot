@@ -133,6 +133,15 @@ class Move:
         self.stop()
 
 
+    def turnByLeft(self,steps):
+        self.encLeft.reset()
+        self.encRight.reset()
+        self.turnLeft()
+        while(self.encRight.read() < steps  and self.encLeft.read() > (-1*steps)):
+            time.sleep(0.05)
+        self.stop()
+
+
 
     def calibrateRobot(self):
         print("Begin Calibration Procedure\nPlace Object in front of sensor")
