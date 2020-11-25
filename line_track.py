@@ -19,12 +19,12 @@ gpio.setup(M, gpio.IN)
 gpio.setup(R, gpio.IN)
 
 while True:
-    if(not L):
+    if(not gpio.input(M)):
         move.forward()
         print('forward')
-    elif not R:
+    elif (not gpio.input(R)):
         move.turnRight()
         print('right')
-    elif not L:
+    elif (not gpio.input(L)):
         move.turnLeft()
         print('left')
