@@ -18,6 +18,8 @@ gpio.setup(L, gpio.IN)
 gpio.setup(M, gpio.IN)
 gpio.setup(R, gpio.IN)
 
+
+time.sleep(10)
 while True:
     if(not gpio.input(M)):
         move.forward()
