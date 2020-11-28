@@ -19,7 +19,5 @@ gpio.setup(M, gpio.IN)
 gpio.setup(R, gpio.IN)
 
 while True:
-    gpio.input(L)
-    gpio.input(M)
-    gpio.input(R)
-    print("L: " + str(L) +" M: "+ str(M) + " R: " + str(R))
+    time.sleep(0.2)
+    print("L: " + str(gpio.input(L)) +" M: "+ str( gpio.input(M)) + " R: " + str(  gpio.input(R)))
