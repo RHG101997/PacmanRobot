@@ -33,4 +33,7 @@ while True:
         print('left')
     elif (not(gpio.input(M) and gpio.input(R) and gpio.input(L))):
         # move.stop()
-        print('stop')
+        print('end')
+        break
+    else:
+        print("stop")
