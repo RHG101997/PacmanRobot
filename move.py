@@ -119,36 +119,12 @@ class Move:
         self.encRight.reset()
         self.forward()
         while(self.encRight.read() < steps and self.encLeft.read() < steps):
-            self.balanceMotor(self.encRight.read(),self.encLeft.read(), steps)
-            time.sleep(0.001)
-        print("Right: " + str(self.encRight.read()) + " Left " + str(self.encLeft.read()) )
+            self.changeSpeed(self.calSpeed(self.speed ,steps))
+            print("Right: " + str(self.encRight.read()) + " Left " + str(self.encLeft.read()) )
+            time.sleep(0.01)
         self.stop()
-
-    def balanceMotor(self, encR,encL, totalStep):
-        misR = totalStep - encR
-        misL = totalStep - encL
-        speed = (100 - ((((encL+encR)/2)*100)/totalStep))
-        # determine speed
-        if(speed > 50):
-            speed = 50
-        elif (speed < 20):
-            speed =  5
-        else:
-            pass
-        # determine which motor is ahead
-        if(misR > misL):
-            self.p2.ChangeDutyCycle(speed*1.2)
-            self.p1.ChangeDutyCycle(speed)
-        elif(misL > misR):
-            self.p2.ChangeDutyCycle(speed)
-            self.p1.ChangeDutyCycle(speed*1.2)
-        else:
-            self.p1.ChangeDutyCycle(speed)
-            self.p2.ChangeDutyCycle(speed)
-
-
     
-    # move specific distance-
+    # move specific distance
     def moveDistance(self, inch):
         self.moveBy(self.encRight.inToSteps(inch))
 
