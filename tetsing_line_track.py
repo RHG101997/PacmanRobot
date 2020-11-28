@@ -21,4 +21,4 @@ gpio.setup(R, gpio.IN)
 while True:
     time.sleep(0.2)
 
-    print("L: " + str(not gpio.input(L)) +" M: "+ str(not gpio.input(M)) + " R: " + str(not  gpio.input(R)) +" Stop: " + str(not(gpio.input(M) and gpio.input(R) and gpio.input(L))))
+    print("L: " + str(not gpio.input(L)) +" M: "+ str(not gpio.input(M)) + " R: " + str(not  gpio.input(R)) +" Stop: " + str((not gpio.input(M) and not gpio.input(R) and not gpio.input(L))))
