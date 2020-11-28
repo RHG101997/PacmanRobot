@@ -21,6 +21,7 @@ gpio.setup(R, gpio.IN)
 
 
 while True:
+    time.sleep(0.5)
     if(not gpio.input(M)):
         # move.reverse()
         print('forward')
