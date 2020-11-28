@@ -30,10 +30,10 @@ while True:
     elif (not gpio.input(L)):
         move.turnRight()
         print('left')
-    elif (not gpio.input(M) and not gpio.input(R) and not gpio.input(L)):
-        move.stop()
-        print('end')
-        break
     else:
         move.stop()
         print("stop")
+    if (not gpio.input(M) and not gpio.input(R) and not gpio.input(L)):
+        move.stop()
+        print('end')
+        break
