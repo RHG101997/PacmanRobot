@@ -25,15 +25,15 @@ while True:
         # move.forward()
         print('forward')
     elif (not gpio.input(R)):
-        # move.turnLeft()
+        move.turnLeft()
         print('right')
     elif (not gpio.input(L)):
-        # move.turnRight()
+        move.turnRight()
         print('left')
-    elif (not(gpio.input(M) and gpio.input(R) and gpio.input(L))):
-        # move.stop()
+    elif (not gpio.input(M) and not gpio.input(R) and not gpio.input(L)):
+        move.stop()
         print('end')
         break
     else:
-        # move.stop()
+        move.stop()
         print("stop")
